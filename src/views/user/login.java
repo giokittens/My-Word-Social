@@ -41,7 +41,6 @@ public class login extends javax.swing.JFrame {
         setTitle("Projeto Login");
         setMaximumSize(new java.awt.Dimension(470, 980));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(470, 980));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -54,6 +53,17 @@ public class login extends javax.swing.JFrame {
         btnClose.setForeground(new java.awt.Color(255, 255, 255));
         btnClose.setText("x");
         btnClose.setAlignmentY(0.0F);
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCloseMouseExited(evt);
+            }
+        });
         PainelRoot.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 20, 30));
 
         psSenha.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -68,6 +78,16 @@ public class login extends javax.swing.JFrame {
         txUserMail.setText("email@exemplo.com");
         txUserMail.setBorder(null);
         txUserMail.setOpaque(false);
+        txUserMail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txUserMailFocusGained(evt);
+            }
+        });
+        txUserMail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txUserMailActionPerformed(evt);
+            }
+        });
         PainelRoot.add(txUserMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 220, 40));
 
         lbLinkCriarConta.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -126,6 +146,35 @@ public class login extends javax.swing.JFrame {
         // Mudar cor do botão
         BtnFazerLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/btn_login.png")));
     }//GEN-LAST:event_BtnFazerLoginMouseExited
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+      this.dispose();
+      
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCloseMouseClicked
+
+    private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
+        this.btnClose.setForeground(new java.awt.Color(229,215,116));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCloseMouseEntered
+
+    private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
+        this.btnClose.setForeground(new java.awt.Color(255,255,255));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCloseMouseExited
+
+    private void txUserMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txUserMailActionPerformed
+        // TODO add your handling code here:
+        if (this.txUserMail.getText().equals("")){
+        this.txUserMail.setText("Preencha seu E-mail");
+                
+                }
+    }//GEN-LAST:event_txUserMailActionPerformed
+
+    private void txUserMailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txUserMailFocusGained
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txUserMailFocusGained
 
     /**
      * @param args the command line arguments
